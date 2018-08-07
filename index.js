@@ -20,16 +20,13 @@ bot.on("message", async message => {
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
-
-  if (cmd === `${prefix}asl`) {
-    let [age, sex, location] = args;
-    message.reply(`Hello ${message.author.username}, I see you're a ${age} year old ${sex} from ${location}. Wanna date?`);
 }
 
   if (cmd === `${prefix}inactive`) {
 
       //>inactive <duration> <reason>
       if(message.member.roles.find(`name`, "Inactive")) {
+        message.delete().catch(O_o=>{});
         return message.channel.send("Sorry, you already have an inactivity notice submitted!");
       }
       else {
