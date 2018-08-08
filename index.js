@@ -45,7 +45,7 @@ bot.on("message", async message => {
       .setDescription("This log is generated when a staff member submits an inactivity notice. To view all other inactivity notices submitted via the google form, click the title above. Information about this inactivity can be seen below.")
       .setThumbnail("https://i.imgur.com/Kv9ZcHX.png")
       .addField("Submitted By", `${message.author}`)
-      .addField("Time", message.createdAt)
+      .addField("Submitted At", message.createdAt)
       .addField("Duration", `${ms(ms(inactivetime))}`)
       .addField("Reason", reason)
       .setTimestamp()
